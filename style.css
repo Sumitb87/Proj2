@@ -1,0 +1,26 @@
+img {
+  width: 250px;
+  height: 200px;
+}
+
+/*form {
+    width: 80%;
+    margin: 0 auto;
+}*/
+
+html {
+  background: url("imgs/backgroundfinal.png");
+}
+
+#api-input {
+  margin-top: 15vw;
+  margin-left: 20vw;
+  height: 50px;
+  width: 500px;
+}
+
+#submit-btn {
+  margin-left: 5vw;
+  width: 100px;
+  height: 30px;
+}
