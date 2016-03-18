@@ -6,10 +6,10 @@
     <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
-<h1> <img src="imgs/logo.png" alt="" /> </h1>
+    <h1> <img src="imgs/logo3.png" alt="" /> </h1>
 
     <form>
-      <label> Search by:
+      <label id="drop"> Search by:
           <select id="dropdown">
             <option class="pick" value="phone">Phone Number</option>
             <option class= "pick" value="email">Email</option>
@@ -18,33 +18,95 @@
         </label>
     <label>
 
-      <input type="text" id="api-input" name="email" value="input" placeholder="Type Full Email Address">
+      <input type="text" id="api-input" name="email" value="input" placeholder="Type here!">
     </label>
     <button id="submit-btn">Search</button>
   </form>
+
   <div id="data-container"></div>
+  <script type="text/x-handlebars-template" id="email-template">
+
+      <h2>Name: {{fullName}}</h2>
+      <h2>Location: {{location}}</h2>
+      <h2>Gender: {{gender}}</h2>
+
+      <h2> Photos:
+      {{#each photos}}
+        <p id="photolist"> <img src="{{this.url}}"</p>
+        {{/each}}</h2>
+        <br><br><br><br><br><br>
+      <h2>Social Media Urls:
+    <br>  <br>
+        {{#each socialProfiles}}
+          <li><a href="{{this.url}}">{{this.url}}</a></li>
+        {{/each}}
 
 
-    <script type="text/x-handlebars-template" id="data-template">
+      <h2>Websites:
+      <br>  <br>
+        {{#each websites}}
+        <li>{{this.url}}</li>
+        {{/each}}
 
-      <h2>Social Media Types {{type}}</h2>
-      <h2>Social Media URL's: {{url}}</h2>
-      <div>
-      {{#each people}}
-      <!-- <div class="row">{{ url }}</div> -->
-        <p>{{this}}</p>
-      <!-- <h2>Photo URL's: {{photo}}</h2> -->
-      {{/each}}
-      </div>
-      <h2>Contact Info: {{contact}}</h2>
+      </h2>
     </script>
 
 
-  <script type="text/javascript" src="main.js"></script>
-  <script type="text/javascript" src="API_KEY_CONTACT.js">
+    <script type="text/x-handlebars-template" id="phone-template">
 
-  </script>
+        <h2>Name: {{fullName}}</h2>
+        <h2>Location: {{location}}</h2>
+        <h2>Gender: {{gender}}</h2>
+
+        <ul> Photos:
+        {{#each photos}}
+          <li> <img src="{{this}}"></li>
+        {{/each}}
+
+      <ul id="socialList"> Social Media Urls:
+      {{#each socialProfiles}}
+        <li>{{this}}</li>
+      {{/each}}
+      </ul>
+      <ul> Websites:
+        {{#each websites}}
+      <li>{{this}}</li>
+        {{/each}}
+      </ul>
+</script>
+
+<script type="text/x-handlebars-template" id="twitter-template">
+
+    <h2>Name: {{fullName}}</h2>
+    <h2>Location: {{location}}</h2>
+    <h2>Gender: {{gender}}</h2>
+
+    <ul> Photos:
+    {{#each photos}}
+      <li> <img src="{{this}}"></li>
+    {{/each}}
+
+  <ul id="socialList"> Social Media Urls:
+  {{#each socialProfiles}}
+    <li>{{this}}</li>
+  {{/each}}
+  </ul>
+  <ul> Websites:
+    {{#each websites}}
+  <li>{{this}}</li>
+    {{/each}}
+  </ul>
+</script>
+
+
+
+  <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript" src="API_KEY_CONTACT.js"> </script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+
   <script src="https://code.jquery.com/jquery-2.2.1.min.js" charset="utf-8"></script>
+
+
+
   </body>
 </html>

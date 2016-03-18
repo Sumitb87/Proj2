@@ -1,6 +1,7 @@
 img {
-  width: 250px;
-  height: 200px;
+  margin-top: 3%;
+  width: 200px;
+  height: 100px;
 }
 
 /*form {
@@ -8,13 +9,22 @@ img {
     margin: 0 auto;
 }*/
 
+#photolist {
+
+float: left;
+}
+
+#socialList {
+  margin-top: 5%;
+}
+
 html {
-  background: url("imgs/backgroundfinal.png");
+  background: url("imgs/backgroundfin2.png");
 }
 
 #api-input {
-  margin-top: 15vw;
-  margin-left: 20vw;
+  margin-top: 18vw;
+  margin-left: 16vw;
   height: 50px;
   width: 500px;
 }
@@ -23,4 +33,16 @@ html {
   margin-left: 5vw;
   width: 100px;
   height: 30px;
+}
+
+#drop {
+  margin-left: 4vw;
+}
+
+h2 li {
+  font-size: 18px;
+}
+
+h2 {
+  font-size: 18px;
 }
