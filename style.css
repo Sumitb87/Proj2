@@ -1,5 +1,5 @@
 img {
-  margin-top: 3%;
+
   width: 200px;
   height: 100px;
 }
@@ -9,21 +9,29 @@ img {
     margin: 0 auto;
 }*/
 
+
 #photolist {
 
-float: left;
+display: inline-flex;
+flex-direction: column;
+justify-content: center;
+flex-wrap: nowrap;
+
+/*float: left;*/
+/*text-align: center;*/
+/*float: left;*/
 }
 
 #socialList {
   margin-top: 5%;
 }
 
-html {
+body {
   background: url("imgs/backgroundfin2.png");
 }
 
 #api-input {
-  margin-top: 18vw;
+  margin-top: 8vw;
   margin-left: 16vw;
   height: 50px;
   width: 500px;
@@ -44,5 +52,83 @@ h2 li {
 }
 
 h2 {
-  font-size: 18px;
+  font-size: 20px;
+color: #505255;
+}
+
+
+ul {
+  overflow: auto;
+  list-style-type: none;
+  list-style-type: none;
+}
+
+li {
+  height: 25px;
+  float: left;
+  margin-right: 0px;
+  border-right: 1px solid #aaa;
+  padding: 0 20px;
+  list-style-type: none;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  text-decoration: none;
+  color: #ccc;
+  font: 18px/1 Helvetica, Verdana, sans-serif;
+  text-transform: uppercase;
+  -webkit-transition: all 0.5s ease;
+}
+/*http://designshack.net/articles/css/5-simple-and-practical-css-list-styles-you-can-copy-and-paste/*/
+li a:hover {
+  color: #666;
+}
+
+li.active a {
+  font-weight: bold;
+  color: #333;
+}
+
+.socialContainer
+{
+  margin-bottom: 7vw;
+}
+.photosize {
+  align-items: center;
+    height: 100px;
+    width: 100px;
+    max-width: 300px;
+    max-height: 300px;
+    border-style: double;
+    border-color: grey;
+    border-width: thick;
+    -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;
+
+}
+/*http://designshack.net/articles/css/joshuajohnson-2/*/
+.photosize:hover {
+  width: 175px;
+  height: 175px;
+}
+
+.website-container {
+  margin-top: 5vw;
+
+}
+.socialIcons {
+  margin-top: 12vw;
+  margin-left: 6vw;
+  font-family: sans-serif;
+}
+
+* {
+  font-family: sans-serif;;
 }

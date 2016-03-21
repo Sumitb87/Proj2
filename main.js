@@ -97,9 +97,9 @@ console.log("object",emailObj);
                     phoneObj.gender = data.demographics.gender;
                     phoneObj.location = data.demographics.locationGeneral;
 
-                    photoObj.websites = data.contactInfo.websites
-                    photoObj.photos = data.photos
-                    photoObj.socialProfiles = data.socialProfiles
+                    phoneObj.websites = data.contactInfo.websites
+                    phoneObj.photos = data.photos
+                    phoneObj.socialProfiles = data.socialProfiles
                     // phoneObj.websites= [];
                     //
                     // for (var i = 0; i < data.contactInfo.websites.length; i++) {
@@ -186,13 +186,10 @@ console.log("object",emailObj);
 }
 });
 
-
-// function Handlebars() {
-//
-//
-//   var contactinfo = document.getElementById("data-template").innerHTML;
-//   var template = Handlebars.compile(contactinfo);
-//   var compiledHtmlM = template(data);
-//   var container = document.getElementById("data-container");
-//   container.innerHTML = compiledHtmlM;
-//   }
+// LETS MAKE SOCIAL MEDIA ICONS!
+// var socialMediaButtons {
+//   facebook:
+//   gravitar
+//   pintrest:
+//   twitter:
+// }

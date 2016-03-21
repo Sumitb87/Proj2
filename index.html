@@ -3,11 +3,33 @@
   <head>
     <meta charset="utf-8">
     <title>Social</title>
+
+<link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="imgs/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon-16x16.png">
+<link rel="manifest" href="imgs/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="imgs/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+    <!-- ethan helped me with font awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
-    <h1> <img src="imgs/logo3.png" alt="" /> </h1>
-
+    <h1> <br> <img src="imgs/logo3.png" alt="" /> </h1>
+    <div class="socialIcons">
+      Join social media sites! <br> <br>
+      <!-- stackoverflow told me to wrap this -->
+        <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.github.com"><i class="fa fa-github-alt"></i></a>
+        <a href="https://www.linkedin.com"><i class="fa fa-linkedin"></i></a>
+        <a href="https://www.plus.google.com"><i class="fa fa-google"></i></a>
+        <a href="https://www.foursquare.com"><i class="fa fa-foursquare"></i></a>
+        <a href="https://www.twitter.com"><i class="fa fa-twitter"></i></a>
+        <a href="https://www.pinterest.com"><i class="fa fa-pinterest"></i></a>
+        <a href="https://www.angellist.com"><i class="fa fa-angellist"></i></a>
+    </div>
     <form>
       <label id="drop"> Search by:
           <select id="dropdown">
@@ -18,84 +40,162 @@
         </label>
     <label>
 
-      <input type="text" id="api-input" name="email" value="input" placeholder="Type here!">
+      <input type="text" id="api-input" name="email" placeholder="Type here!"  >
     </label>
     <button id="submit-btn">Search</button>
   </form>
 
   <div id="data-container"></div>
   <script type="text/x-handlebars-template" id="email-template">
-
+    {{#if fullName}}
       <h2>Name: {{fullName}}</h2>
+    {{else}}
+      <h2>Name: (not found)</h2>
+    {{/if}}
+    {{#if location}}
       <h2>Location: {{location}}</h2>
+    {{else}}
+          Location: (not found)
+    {{/if}}
+    {{#if gender}}
       <h2>Gender: {{gender}}</h2>
+    {{else}}
+      <h2>Gender: (unknown)</h2>
+    {{/if}}
 
-      <h2> Photos:
+    {{#if photos}}
+      <h2> Photos: <br>
       {{#each photos}}
-        <p id="photolist"> <img src="{{this.url}}"</p>
+        <p id="photolist"> <img class="photosize" src="{{this.url}}"</p>
         {{/each}}</h2>
-        <br><br><br><br><br><br>
+    {{else}}
+    <h2>photos: (not found)</h2>
+        {{/if}}
+<div class ="socialContainer">
+      {{#if socialProfiles}}
       <h2>Social Media Urls:
-    <br>  <br>
+        <br>  <br>
         {{#each socialProfiles}}
-          <li><a href="{{this.url}}">{{this.url}}</a></li>
+          <li class='social-profile'><a class="profile-link" href="{{this.url}}">{{this.url}}</a></li>
         {{/each}}
-
-
+        {{else}} <h2>Social Media Urls: (not found)</h2>
+        {{/if}}
+        </div>
+<br><br>
+<div class ="websiteContainer">
+        {{#if websites}}
       <h2>Websites:
       <br>  <br>
         {{#each websites}}
-        <li>{{this.url}}</li>
+        <li><a href="{{this.url}}">{{this.url}}</a></li>
         {{/each}}
-
+        {{else}} <h2>Websites: (not found)</h2>
+        {{/if}}
+      </div>
       </h2>
     </script>
 
 
     <script type="text/x-handlebars-template" id="phone-template">
 
+      {{#if fullName}}
         <h2>Name: {{fullName}}</h2>
+      {{else}}
+        <h2>Name: (not found)</h2>
+      {{/if}}
+      {{#if location}}
         <h2>Location: {{location}}</h2>
+      {{else}}
+            Location: (not found)
+      {{/if}}
+      {{#if gender}}
         <h2>Gender: {{gender}}</h2>
+      {{else}}
+        <h2>Gender: (unknown)</h2>
+      {{/if}}
 
-        <ul> Photos:
+      {{#if photos}}
+        <h2> Photos: <br>
         {{#each photos}}
-          <li> <img src="{{this}}"></li>
-        {{/each}}
+          <p id="photolist"> <img class="photosize" src="{{this.url}}"</p>
+          {{/each}}</h2>
+      {{else}}
+    <h2>  photos: (not found)</h2>
+          {{/if}}
 
-      <ul id="socialList"> Social Media Urls:
-      {{#each socialProfiles}}
-        <li>{{this}}</li>
-      {{/each}}
-      </ul>
-      <ul> Websites:
-        {{#each websites}}
-      <li>{{this}}</li>
-        {{/each}}
-      </ul>
+        <div class ="socialContainer">
+        {{#if socialProfiles}}
+        <h2>Social Media Urls:
+          <br>  <br>
+          {{#each socialProfiles}}
+            <li class='social-profile'><a class="profile-link" href="{{this.url}}">{{this.url}}</a></li>
+          {{/each}}
+        <h2>  {{else}} Social Media Urls: (not found)</h2>
+          {{/if}}
+        </h2>
+        </div>
+        <div class ="websiteContainer">
+          {{#if websites}}
+        <h2>Websites:
+        <br>  <br>
+          {{#each websites}}
+          <li><a href="{{this.url}}">{{this.url}}</a></li>
+          {{/each}}
+          <h2>{{else}} Websites: (not found)</h2>
+          {{/if}}
+        </h2>
+      </div>
 </script>
 
 <script type="text/x-handlebars-template" id="twitter-template">
 
+  {{#if fullName}}
     <h2>Name: {{fullName}}</h2>
+  {{else}}
+    <h2>Name: (not found)</h2>
+  {{/if}}
+  {{#if location}}
     <h2>Location: {{location}}</h2>
+  {{else}}
+        Location: (not found)
+  {{/if}}
+  {{#if gender}}
     <h2>Gender: {{gender}}</h2>
+  {{else}}
+    <h2>Gender: (unknown)</h2>
+  {{/if}}
 
-    <ul> Photos:
+  {{#if photos}}
+    <h2> Photos: <br>
     {{#each photos}}
-      <li> <img src="{{this}}"></li>
-    {{/each}}
+      <p id="photolist"> <img class="photosize" src="{{this.url}}"</p>
+      {{/each}}</h2>
+  {{else}}
+<h2>  photos: (not found) </h2>
+      {{/if}}
 
-  <ul id="socialList"> Social Media Urls:
-  {{#each socialProfiles}}
-    <li>{{this}}</li>
-  {{/each}}
-  </ul>
-  <ul> Websites:
-    {{#each websites}}
-  <li>{{this}}</li>
-    {{/each}}
-  </ul>
+<div class ="socialContainer">
+    {{#if socialProfiles}}
+    <h2>Social Media Urls:
+      <br>  <br>
+      {{#each socialProfiles}}
+        <li class='social-profile'><a class="profile-link" href="{{this.url}}">{{this.url}}</a></li>
+      {{/each}}
+      {{else}} <h2> Social Media Urls: (not found)</h2>
+      {{/if}}
+      <br> <br>
+</div>
+  <div class ="websiteContainer">
+      {{#if websites}}
+    <h2>Websites:
+    <br>  <br>
+      {{#each websites}}
+      <li><a href="{{this.url}}">{{this.url}}</a></li>
+      {{/each}}
+      <h2> {{else}} Websites: (not found)</h2>
+      {{/if}}
+    </h2>
+  </div>
 </script>
 
 
@@ -103,7 +203,6 @@
   <script type="text/javascript" src="main.js"></script>
   <script type="text/javascript" src="API_KEY_CONTACT.js"> </script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
-
   <script src="https://code.jquery.com/jquery-2.2.1.min.js" charset="utf-8"></script>
 
 
