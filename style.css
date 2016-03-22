@@ -98,7 +98,7 @@ li.active a {
   margin-bottom: 7vw;
 }
 .photosize {
-  align-items: center;
+    
     height: 100px;
     width: 100px;
     max-width: 300px;
